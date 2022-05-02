@@ -1,0 +1,19 @@
+<h1>投稿一覧</h1>
+  <table>
+    <% @blogs.each do |blog| %>
+    <th>投稿者：</th>
+    <tr>
+      <td><%= blog.title %></td>
+    </tr>
+    <tr>
+      <td><%= blog.content %></td>
+    </tr>
+    <tr>
+      <td>
+        <%= link_to 'Show', blog %>
+        /<%= link_to 'Edit', edit_blog_path(blog) %>
+        /<%= link_to 'Destroy', blog, method: :delete, data: { confirm: '本当に消しますか？' } %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
